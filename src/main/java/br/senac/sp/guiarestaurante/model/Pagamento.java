@@ -7,14 +7,13 @@ import java.util.Date;
 
 @Data
 @Entity
-public class Funcionario {
+public class Pagamento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nome;
-    @Column(unique = true)
-    private String cpf;
-    private String endereco;
-    private Date dataNascimento;
-    private Cargo cargo;
+    private Double valor;
+    private Date dataHora;
+    private MetodoPagamento pagamento;
+    @ManyToOne
+    private Pedido pedido;
 }
